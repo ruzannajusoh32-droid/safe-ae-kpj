@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emergency Response Information | KPJ Pahang Specialist Hospital</title>
+<style>
+:root{--ink:#263238;--muted:#65747b;--bg:#f5f9fb;--paper:#fff;--line:#d8e2e5;--brand:#777064;--soft:#eef7f8;--navy:#315b86;--red:#c33b35;--mint:#e9f7f1;--sky:#eaf4ff;--cream:#fff8e9}
+*{box-sizing:border-box}html,body{margin:0;height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:
+radial-gradient(circle at 7% 10%,rgba(103,190,202,.20),transparent 25%),
+radial-gradient(circle at 92% 18%,rgba(255,210,112,.17),transparent 23%),
+radial-gradient(circle at 82% 90%,rgba(113,199,160,.18),transparent 28%),
+linear-gradient(135deg,#f5fbfd 0%,#f7fbf8 48%,#f2f7ff 100%);
+color:var(--ink);overflow:hidden}
+header{height:72px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);box-shadow:0 3px 14px rgba(55,90,105,.07)}
+.nav{width:min(1180px,94vw);height:100%;margin:auto;display:flex;align-items:center}
+.brand{color:var(--brand);line-height:.95;font-weight:800;display:flex;align-items:center;gap:10px}
+.brand img{width:205px;height:auto;display:block;object-fit:contain}
+.brand small{font-size:8px;letter-spacing:1.1px;display:block;margin-top:4px;color:#6c716f}
+.tag{margin-left:auto;background:var(--soft);padding:7px 12px;border-radius:18px;font-size:11px;font-weight:800;color:#625d55}
+.shell{width:min(1180px,94vw);height:calc(100vh - 72px);margin:auto;padding:15px 0;display:grid;grid-template-columns:30% 70%;gap:15px}
+.panel{background:rgba(255,255,255,.97);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 28px rgba(55,90,105,.08);min-height:0}
+.left{padding:17px;display:flex;flex-direction:column}
+.eyebrow{font-size:10px;letter-spacing:1.2px;font-weight:900;color:var(--brand)}
+h1{font-size:23px;margin:6px 0 3px}.intro{font-size:11px;color:var(--muted);margin:0 0 12px}
+.categories{display:grid;gap:7px;overflow:auto}
+.cat{border:1px solid var(--line);background:#fafafa;border-radius:11px;padding:10px;text-align:left;cursor:pointer;display:flex;align-items:center;gap:9px}
+.cat.active,.cat:hover{background:linear-gradient(135deg,#edf8fb,#f1faf5);border-color:#b9d7dd;box-shadow:inset 4px 0 0 #58a9b7}
+.num{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#e7f5fb,#e9f7f0);color:#4f7881;display:grid;place-items:center;font-size:10px;font-weight:900;flex:none;box-shadow:inset 0 0 0 1px rgba(83,150,165,.10)}
+.cat.active .num{background:linear-gradient(135deg,#4f9eae,#69b99a);color:#fff}.cat b{font-size:11px;display:block}.cat span{font-size:9px;color:var(--muted);display:block;margin-top:2px}
+.leftfoot{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);display:flex;gap:7px}.btn{border:0;border-radius:9px;padding:9px 11px;font-size:10px;font-weight:800;cursor:pointer}.primary{background:linear-gradient(135deg,#397a9c,#4a9b91);color:#fff;box-shadow:0 4px 10px rgba(61,133,144,.18)}.secondary{background:#edf4f6;color:#38535d}
+.right{padding:17px;display:flex;flex-direction:column;background:rgba(255,255,255,.97)}
+.formhead{display:flex;align-items:center;gap:10px;padding:9px 10px 12px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#eef8fb,#f2faf6,rgba(255,255,255,0));border-radius:12px}
+.icon{width:37px;height:37px;border-radius:10px;background:linear-gradient(135deg,#e5f5fb,#e7f7ef);display:grid;place-items:center;color:#4c7c86;font-weight:900;font-size:11px}
+.formhead h2{margin:0;font-size:18px}.formhead p{margin:3px 0 0;font-size:10px;color:var(--muted)}
+.formarea{overflow:auto;padding:12px 2px 3px;flex:1}
+.section{display:none}.section.active{display:block}
+.note{background:linear-gradient(90deg,#eef8fb,#f0faf5);border-radius:8px;padding:8px;font-size:9px;color:#60747b;margin-bottom:9px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.two{grid-template-columns:1fr 1fr}.full{grid-column:1/-1}
+label{font-size:9px;font-weight:800;color:#56636a;display:block;margin-bottom:4px}
+.req{color:var(--red)}
+input,select,textarea{width:100%;border:1px solid var(--line);background:#ffffff;border-radius:8px;padding:8px;font-size:11px;color:var(--ink);outline:none;transition:.15s}
+input:focus,select:focus,textarea:focus{border-color:#70b8c3;box-shadow:0 0 0 3px rgba(91,178,191,.13)}
+textarea{min-height:65px;resize:vertical}
+.choice{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.choice label{display:flex;gap:5px;align-items:center;margin:0;background:#fafafa;border:1px solid var(--line);border-radius:8px;padding:7px 9px;cursor:pointer;font-weight:700}.choice input{width:auto}
+.subhead{font-size:10px;font-weight:900;color:#5f625f;margin:11px 0 7px;letter-spacing:.3px}
+.footerbar{border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;align-items:center}.status{font-size:9px;color:var(--muted)}
+.modal{position:fixed;inset:0;background:rgba(26,31,34,.45);display:none;align-items:center;justify-content:center;padding:15px;z-index:20}.modal.show{display:flex}
+.box{background:#fff;width:min(950px,100%);max-height:88vh;border-radius:17px;padding:18px;overflow:auto}.boxhead{display:flex;justify-content:space-between;align-items:center}.box h2{margin:0;font-size:19px}.close{border:0;width:32px;height:32px;border-radius:50%;background:#eee;cursor:pointer}
+.logform{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:13px 0}.logform .wide{grid-column:1/-1}
+.logform input,.logform select{padding:9px}.logwrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:10px}th,td{border:1px solid var(--line);padding:7px;text-align:left}th{background:#f0f1ef}
+@media(max-width:850px){body{overflow:auto}.shell{height:auto;grid-template-columns:1fr;padding:10px 0}.panel{min-height:400px}.tag{display:none}.grid,.two{grid-template-columns:1fr}.full{grid-column:auto}}
+@media print{header,.left,.footerbar{display:none}body{background:#fff;overflow:auto}.shell{display:block;width:100%;height:auto}.right{border:0;box-shadow:none}.section{display:block!important}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<div class="brand"><img src="data:image/jpeg;base64,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" alt="KPJ Pahang Specialist Hospital logo"><small>ACCIDENT &amp; EMERGENCY SERVICES</small></div>
+<div class="tag">EMERGENCY RESPONSE INFORMATION</div>
+</div></header>
+
+<div class="shell">
+<section class="panel left">
+<div class="eyebrow">ACCIDENT &amp; EMERGENCY SERVICES</div>
+<h1>Emergency Response</h1>
+<p class="intro">Use the categories to complete the form. Fields follow the supplied form.</p>
+<div class="categories">
+<button class="cat active" onclick="openCat('patient',0,this)"><div class="num">01</div><div><b>Patient Information</b><span>Caller &amp; patient's details</span></div></button>
+<button class="cat" onclick="openCat('emergency',1,this)"><div class="num">02</div><div><b>Present Emergency</b><span>Emergency details</span></div></button>
+<button class="cat" onclick="openCat('vitals',2,this)"><div class="num">03</div><div><b>Vital Signs</b><span>BP, pulse, RR, temperature, SpO₂, GCS</span></div></button>
+<button class="cat" onclick="openCat('infectious',3,this)"><div class="num">04</div><div><b>Infectious Case</b><span>Yes / No &amp; details / remarks</span></div></button>
+<button class="cat" onclick="openCat('history',4,this)"><div class="num">05</div><div><b>Medical History</b><span>Medical history &amp; present medication</span></div></button>
+<button class="cat" onclick="openCat('equipment',5,this)"><div class="num">06</div><div><b>Special Request / Equipment</b><span>Cardiac Monitor, Ventilator, Immobilizer, Others</span></div></button>
+<button class="cat" onclick="openCat('action',6,this)"><div class="num">07</div><div><b>Action &amp; Ambulance</b><span>MO/Consultant, departure, arrival, nurse/driver</span></div></button>
+<button class="cat" onclick="openCat('signature',7,this)"><div class="num">08</div><div><b>Signatures</b><span>Trained Nurse &amp; Medical Officer</span></div></button>
+</div>
+<div class="leftfoot"><button class="btn primary" onclick="window.print()">Print / PDF</button><button class="btn secondary" onclick="openValidation()">Validation Log</button></div>
+</section>
+
+<section class="panel right">
+<div class="formhead">
+<div class="icon" id="icon">01</div>
+<div style="flex:1"><h2 id="title">Patient Information</h2><p id="desc">Caller &amp; patient's details</p></div>
+<div style="font-size:9px;font-weight:800;color:#69757b;background:#f2f3f1;padding:6px 9px;border-radius:14px">CURRENT PATIENT</div>
+</div>
+<div class="formarea">
+
+<div class="section active" id="patient">
+<div class="note">Source form: Date, Time, Taken by, Caller's Name, Contact No, Patient's Details and Address/Location.</div>
+<div class="grid two">
+<div><label>Date</label><input id="date" type="date"></div><div><label>Time</label><input id="time" type="time"></div>
+<div><label>Taken by</label><input id="takenBy" placeholder="Name"></div><div><label>Caller's Name</label><input id="callerName" placeholder="Name"></div>
+<div><label>Contact No</label><input id="callerContact" placeholder="Contact number"></div><div><label>Patient ID / MRN <span class="req">*</span></label><input id="mrn" placeholder="Patient ID / MRN"></div>
+<div><label>Patient Name</label><input id="patientName" placeholder="Patient's full name"></div><div><label>Contact No</label><input id="patientContact" placeholder="Patient contact number"></div>
+<div class="full"><label>Patient's Details</label><textarea id="patientDetails" placeholder="Patient details as recorded on the source form"></textarea></div>
+<div class="full"><label>Address/Location</label><textarea id="location" placeholder="Address / location"></textarea></div>
+</div></div>
+
+<div class="section" id="emergency">
+<div class="note">Source form label: PRESENT EMERGENCY. Record the emergency information without changing the source terminology.</div>
+<div class="grid"><div class="full"><label>Present Emergency</label><textarea id="presentEmergency" placeholder="Describe present emergency"></textarea></div><div class="full"><label>Diagnosis</label><input id="diagnosisText" placeholder="Diagnosis / working diagnosis"></div>
+<div><label>Response Priority</label><select id="priority"><option value="">Select</option><option>Urgent</option><option>Non urgent</option></select></div></div></div>
+
+<div class="section" id="vitals">
+<div class="note">Source form fields: BP, Pulse, RR, Temp, Spo2 and GCS.</div>
+<div class="grid">
+<div><label>BP</label><input id="bp" placeholder="e.g. 120/80 mmHg"></div>
+<div><label>Pulse</label><input id="pulse" placeholder="bpm"></div>
+<div><label>RR</label><input id="rr" placeholder="/min"></div>
+<div><label>Temp</label><input id="temp" placeholder="°C"></div>
+<div><label>Spo2</label><input id="spo2" placeholder="%"></div>
+<div><label>GCS</label><input id="gcs" placeholder="Score"></div>
+</div></div>
+
+<div class="section" id="infectious">
+<div class="note">Source form contains INFECTIOUS CASE with YES, DETAILS, NO and REMARKS.</div>
+<div class="subhead">INFECTIOUS CASE</div>
+<div class="choice">
+<label><input type="radio" name="infectious" value="YES"> YES</label>
+<label><input type="radio" name="infectious" value="NO"> NO</label>
+</div>
+<div class="grid two" style="margin-top:10px">
+<div><label>DETAILS</label><textarea id="infectiousDetails" placeholder="Details"></textarea></div>
+<div><label>REMARKS</label><textarea id="infectiousRemarks" placeholder="Remarks"></textarea></div>
+</div></div>
+
+<div class="section" id="history">
+<div class="note">Source form fields: MEDICAL HISTORY and PRESENT MEDICATION IF ANY.</div>
+<div class="grid two">
+<div><label>MEDICAL HISTORY</label><textarea id="medicalHistory" placeholder="Medical history"></textarea></div>
+<div><label>PRESENT MEDICATION IF ANY</label><textarea id="medication" placeholder="Present medication, if any"></textarea></div>
+</div></div>
+
+<div class="section" id="equipment">
+<div class="note">Source form fields preserved: SPECIAL REQUEST / EQUIPMENT — Cardiac Monitor, Ventilator, Immobilizer, Others.</div>
+<div class="subhead">SPECIAL REQUEST / EQUIPMENT</div>
+<div class="choice">
+<label><input type="checkbox" id="cardiac"> Cardiac Monitor</label>
+<label><input type="checkbox" id="ventilator"> Ventilator</label>
+<label><input type="checkbox" id="immobilizer"> Immobilizer</label>
+<label><input type="checkbox" id="othersCheck"> Others</label>
+</div>
+<div style="margin-top:10px"><label>Others / Details</label><input id="equipmentOthers" placeholder="Specify others"></div>
+</div>
+
+<div class="section" id="action">
+<div class="note">Source form fields preserved: ACTION, MO/Consultant noted, Ambulance Departure Time, Ambulance Arrival Time, Trained Nurse/Driver.</div>
+<div class="grid two">
+<div class="full"><label>ACTION</label><textarea id="actionText" placeholder="Action taken / required"></textarea></div>
+<div><label>MO/Consultant noted</label><input id="moNoted" placeholder="Name / details"></div>
+<div><label>Ambulance Departure Time</label><input id="ambDeparture" type="time"></div>
+<div><label>Ambulance Arrival Time</label><input id="ambArrival" type="time"></div>
+<div><label>Trained Nurse/Driver</label><input id="nurseDriver" placeholder="Name / designation"></div>
+</div></div>
+
+<div class="section" id="signature">
+<div class="note">Source form signatures: Trained Nurse Name &amp; Sign and Medical Officer's Name &amp; Sign.</div>
+<div class="grid two">
+<div><label>Trained Nurse Name &amp; Sign</label><input id="nurseSign" placeholder="Name / signature"></div>
+<div><label>Medical Officer's Name &amp; Sign</label><input id="moSign" placeholder="Name / signature"></div>
+</div></div>
+
+</div>
+<div class="footerbar">
+<span class="status" id="saveStatus">New patient form — no previous patient data loaded.</span>
+<div style="display:flex;gap:7px">
+<button class="btn secondary" onclick="newPatient()">New Patient / Clear</button>
+<button class="btn primary" onclick="saveForm()">Save Information</button>
+</div>
+</div>
+</section>
+</div>
+
+<div class="modal" id="modal"><div class="box">
+<div class="boxhead"><h2>Validation Log</h2><button class="close" onclick="closeValidation()">×</button></div>
+<p class="intro">No manual entry required. The log captures the current patient information, diagnosis, location, date/time, MRN/ID and action directly from the form and syncs with the live Validation Log.</p>
+<div class="actions" style="display:flex;gap:8px;margin:12px 0">
+<button class="btn primary" onclick="captureValidation()">Capture Current Record</button>
+<button class="btn secondary" onclick="exportCSV()">Export CSV</button>
+</div>
+<div class="logwrap"><table><thead><tr>
+<th>Date / Time</th><th>Patient ID / MRN</th><th>Patient Name</th><th>Diagnosis</th><th>Location</th><th>Finding / Action</th>
+</tr></thead><tbody id="logs"></tbody></table></div>
+</div></div>
+
+<script>
+const meta=[
+['patient','Patient Information',"Caller & patient's details"],
+['emergency','Present Emergency','Emergency details'],
+['vitals','Vital Signs','BP, Pulse, RR, Temp, Spo2, GCS'],
+['infectious','Infectious Case','Yes / No & Details / Remarks'],
+['history','Medical History','Medical history & present medication'],
+['equipment','Special Request / Equipment','Cardiac Monitor, Ventilator, Immobilizer, Others'],
+['action','Action & Ambulance','MO/Consultant, ambulance and trained nurse/driver'],
+['signature','Signatures','Trained Nurse & Medical Officer']
+];
+function openCat(id,n,el){
+ document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));el.classList.add('active');
+ document.getElementById('icon').textContent=String(n+1).padStart(2,'0');
+ document.getElementById('title').textContent=meta[n][1];
+ document.getElementById('desc').textContent=meta[n][2];
+}
+const FORMKEY='kpj_eri_current_patient_v6';
+function saveForm(){
+ const data={};
+ document.querySelectorAll('input,select,textarea').forEach(x=>{
+   if(x.type==='radio') data[x.name]=document.querySelector('input[name="'+x.name+'"]:checked')?.value||'';
+   else if(x.type==='checkbox') data[x.id]=x.checked;
+   else data[x.id]=x.value;
+ });
+ localStorage.setItem(FORMKEY,JSON.stringify(data));
+ document.getElementById('saveStatus').textContent='Current patient information saved '+new Date().toLocaleTimeString();
+}
+function newPatient(){
+ if(!confirm('Start a NEW patient record? The current patient form will be cleared. Validation Log records will remain محفوظ.')) return;
+ document.querySelectorAll('input,select,textarea').forEach(x=>{
+   if(x.type==='radio'||x.type==='checkbox') x.checked=false;
+   else x.value='';
+ });
+ localStorage.removeItem(FORMKEY);
+ const now=new Date();
+ const d=document.getElementById('date'), t=document.getElementById('time');
+ if(d) d.value=now.toISOString().slice(0,10);
+ if(t) t.value=now.toTimeString().slice(0,5);
+ document.getElementById('saveStatus').textContent='New patient form — previous patient data cleared.';
+ document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+ document.getElementById('patient').classList.add('active');
+ document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));
+ document.querySelector('.cat').classList.add('active');
+ document.getElementById('icon').textContent='01';
+ document.getElementById('title').textContent='Patient Information';
+ document.getElementById('desc').textContent="Caller & patient's details";
+}
+const LOGKEY='kpj_eri_validation_auto_v7';
+const SHEET_WEBAPP_URL='https://script.google.com/macros/s/AKfycbzUCpj48M3Oiq2QcFyILQDxnhB6DWU1NwNjEcH84g7UACZay5UqHfDDvZKkqQMtI-p_/exec';
+
+localStorage.removeItem('kpj_eri_validation_auto_v6');
+function logs(){return JSON.parse(localStorage.getItem(LOGKEY)||'[]')}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function val(id){const x=document.getElementById(id);return x?x.value:''}
+
+function renderLogs(){
+ document.getElementById('logs').innerHTML=logs().map(x=>'<tr>'+
+ [x.dt,x.mrn,x.pname,x.diagnosis,x.location,x.action].map(t=>'<td>'+esc(t)+'</td>').join('')+
+ '</tr>').join('')
+}
+
+function captureValidation(){
+ const entry={
+   dt:new Date().toLocaleString(),
+   mrn:val('mrn'),
+   pname:val('patientName'),
+   diagnosis:val('diagnosisText') || val('presentEmergency'),
+   location:val('location'),
+   action:val('actionText')
+ };
+ if(!entry.mrn && !entry.pname){
+   alert('Please enter the current Patient ID / MRN or Patient Name first.');
+   return;
+ }
+ const a=logs(); a.push(entry); localStorage.setItem(LOGKEY,JSON.stringify(a)); renderLogs();
+ document.getElementById('saveStatus').textContent='Validation record captured locally and sent to live Validation Log.';
+
+ if(SHEET_WEBAPP_URL && !SHEET_WEBAPP_URL.includes('PASTE_GOOGLE')){
+   fetch(SHEET_WEBAPP_URL,{
+     method:'POST', mode:'no-cors',
+     headers:{'Content-Type':'text/plain;charset=utf-8'},
+     body:JSON.stringify({
+       action:'append',
+       entry:entry
+     })
+   }).catch(()=>{});
+ }
+}
+
+async function loadLiveValidationLog(){
+ if(!SHEET_WEBAPP_URL || SHEET_WEBAPP_URL.includes('PASTE_GOOGLE')) return;
+ try{
+   const res=await fetch(SHEET_WEBAPP_URL+'?action=getValidationLog');
+   const data=await res.json();
+   if(Array.isArray(data)){
+     localStorage.setItem(LOGKEY,JSON.stringify(data));
+     renderLogs();
+   }
+ }catch(e){}
+}
+
+function exportCSV(){
+ let r=[['Date / Time','Patient ID / MRN','Patient Name','Diagnosis','Location','Finding / Action'],
+ ...logs().map(x=>[x.dt,x.mrn,x.pname,x.diagnosis,x.location,x.action])];
+ let csv=r.map(a=>a.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\n');
+ let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+ a.download='Emergency_Response_Validation_Log.csv';a.click();
+}
+function openValidation(){
+ document.getElementById('modal').classList.add('show');
+ renderLogs();
+ loadLiveValidationLog();
+}
+function closeValidation(){document.getElementById('modal').classList.remove('show')}
+renderLogs();
+</script>
+</body></html>
